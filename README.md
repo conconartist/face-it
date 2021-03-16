@@ -20,9 +20,8 @@ Originally, this project was built for a project with Turing School of Software 
 
 ## Features
 
-To view please:
-- This app has yet to be deployed
-- please come back at a later data
+To view:
+https://face-it.vercel.app/
 
 ### Categories:
 - [Home Page](#Home-Page)
