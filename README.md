@@ -12,11 +12,9 @@ __updated: 03/02/2020__
 ---
 ## Introduction
 
-![face-it-logo](https://user-images.githubusercontent.com/67291333/111339087-177b0f80-863d-11eb-8c9f-39c2894d6e49.png)
+This project comes out of the need for an app that can help a concerned & conscientious consumer understand and discover what beauty products match their lifestyle.
 
-This project comes out of the need for an app that can help a concerned & conscientious consumer understand what beauty products match their lifestyle.
-
-Originally, this project was built for a project with Turing School of Software & Design. [See rubric here](https://frontend.turing.io/projects/module-3/stretch.html).
+Originally, this app was built for a project with Turing School of Software & Design. [See rubric here](https://frontend.turing.io/projects/module-3/stretch.html).
 
 ## Features
 
