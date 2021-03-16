@@ -48,7 +48,7 @@ Upon navigating to our landing page, users see the available product categories:
 #### Category Page
 A user can select a category type and view makeup products available in that category.
 
-![example](https://media.giphy.com/media/tNlGDjgYWICaJRQfVH/giphy.gif)
+![example](https://media.giphy.com/media/ZZH1ssrFQ2xWqAalo5/giphy.gif)
 
 <details>
 <summary>Example of Eco</summary>
