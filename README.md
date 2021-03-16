@@ -43,22 +43,12 @@ https://face-it.vercel.app/
 #### Home Page
 Upon navigating to our landing page, users see the available product categories: vegan, allergen friendly, and eco conscious.
 
-<details>
-<summary>Example of Home Page</summary>
-<br>
- <img width="283" alt="static home page interaction" src="https://imgur.com/j9fLUoC">
-
- <img width="283" alt="home page gif" src="https://media.giphy.com/media/JkYD0SY27cAwdGcZht/giphy.gif">
-</details>
+![home page](https://media.giphy.com/media/2bXTaMQ4Eu7uNqst26/giphy.gif)
 
 #### Category Page
 A user can select a category type and view makeup products available in that category.
 
-<details>
-<summary>Example of User flow</summary>
-<br>
-<img width="283" alt="eco page interaction" src="https://media.giphy.com/media/tNlGDjgYWICaJRQfVH/giphy.gif" />
-</details>
+![example](https://media.giphy.com/media/tNlGDjgYWICaJRQfVH/giphy.gif)
 
 <details>
 <summary>Example of Eco</summary>
