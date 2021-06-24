@@ -67,32 +67,19 @@ class App extends Component {
   }
 
   sortByCategory = response => {
-    const vegan = response.filter(item => item['tag_list'].includes('Vegan'));
-    const eco = response.filter(
-      (item) =>
-        item['tag_list'].includes('EWG Verified') ||
-        item['tag_list'].includes('purpicks') ||
-        item['tag_list'].includes('CertClean') ||
-        item['tag_list'].includes('EcoCert') ||
-        item['tag_list'].includes('USDA Organic') ||
-        item['tag_list'].includes('Non-GMO') ||
-        item['tag_list'].includes('Organic')
-    );
-    const allergenFriendly = response.filter(
-      (item) =>
-        item['tag_list'].includes('Dairy Free') ||
-        item['tag_list'].includes('Gluten Free') ||
-        item['tag_list'].includes('Hypoallergenic') ||
-        item['tag_list'].includes('Peanut Free Product') ||
-        item['tag_list'].includes('alcohol free') ||
-        item['tag_list'].includes('silicone free')
-    );
+    const crueltyFree = response.filter(item => item['cruelty_free'] === 1);
+    const fairTrade = response.filter(item => item['fair_trade'] === 1);
+    const organic = response.filter(item => item['organic'] === 1);
+    const vegan = response.filter(item => item['vegan'] === 1);
+    const zeroWaste = response.filter(item => item['zero_waste'] === 1);
     this.setState({
       isSearching: false,
       filteredMakeup: [],
+      crueltyFree: crueltyFree,
+      fairTrade: fairTrade,
+      organic: organic,
       vegan: vegan,
-      eco: eco,
-      allergenFriendly: allergenFriendly,
+      zeroWaste: zeroWaste
     });
   }
 
