@@ -13,7 +13,6 @@ const Items = ({ data, type, category }) => {
     name={item.name}
     brand={item.brand}
     img={item['image_link']}
-    tags={item['tag_list']}
     productType={item['product_type']}
     category={category}
     />
