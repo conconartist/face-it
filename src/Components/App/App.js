@@ -20,10 +20,12 @@ class App extends Component {
     super();
     this.state = {
       makeup: [],
+      crueltyFree: [],
+      fairTrade: [], 
       vegan: [],
-      allergenFriendly: [],
-      eco: [],
       filteredMakeup: [],
+      organic: [],
+      zeroWaste: [],
       isFetching: true,
       isSearching: false,
       error: false,
@@ -49,19 +51,12 @@ class App extends Component {
   }
 
   searchMakeup = userInput => {
-    const filteredByTag = [];
-    if(userInput !== '') {
-    this.state.makeup.forEach(item => {
-      const tags = item['tag_list'].map(tag => tag.toLowerCase());
-      if(tags.includes(userInput)) {
-        filteredByTag.push(item)
-      }
-    })
+      if(userInput !== ''){
     const filterWithBrand = this.state.makeup.filter(item => item.brand)
     const filteredByBrand = filterWithBrand.filter(item => {
       return item.brand.toLowerCase().includes(userInput)
     })
-    const uniqueFilteredMakeup = [...new Set(filteredByTag.concat(filteredByBrand))]
+    const uniqueFilteredMakeup = [...new Set(filteredByBrand)]
     this.setState({filteredMakeup: uniqueFilteredMakeup, isSearching: true})
     }
   }
@@ -187,16 +182,16 @@ class App extends Component {
             exact
             path='/:category'
             render={({ match }) => {
-              if (match.params.category === 'vegan') {
-                return <Vegan vegan={this.state.vegan} />;
-              } else if (match.params.category === 'allergenFriendly') {
-                return (
-                  <AllergenFriendly
-                    allergenFriendly={this.state.allergenFriendly}
-                  />
-                );
-              } else if (match.params.category === 'eco') {
-                return <Eco eco={this.state.eco} />;
+              if (match.params.category === 'crueltyFree'){
+                return <h1>Cruelty Free</h1>
+              } else if (match.params.category === 'fairTrade') {
+                return <h1>Fair Trade</h1>
+              } else if (match.params.category === 'organic') {
+                return <h1>Organic</h1>;
+              } else if (match.params.category === 'vegan') {
+                return <Vegan vegan={this.state.vegan} />
+              } else if (match.params.category === 'zeroWaste') {
+                return <h1>Zero Waste</h1>
               }
             }}
           />
