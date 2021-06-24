@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Link, Redirect } from 'react-router-dom';
 import './App.css';
-import Eco from '../Category/Eco';
+import FairTrade from '../Category/FairTrade';
+import Organic from '../Category/Organic';
 import Vegan from '../Category/Vegan';
-import AllergenFriendly from '../Category/AllergenFriendly';
+import ZeroWaste from '../Category/ZeroWaste';
+import CrueltyFree from '../Category/CrueltyFree';
 import Nav from '../Nav/Nav';
 import LoadingMessage from '../Loading/Loading';
 import Logo from '../Logo/Logo';
@@ -147,9 +149,7 @@ class App extends Component {
                             backgroundImage: `url(${'https://images.unsplash.com/photo-1586445781752-63b964aa0404?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'})`,
                           }}
                         >
-                          <h3 className='mainCategoryText'>
-                            Cruelty Free
-                          </h3>
+                          <h3 className='mainCategoryText'>Cruelty Free</h3>
                         </article>
                       </Link>
                       <Link to='/fairTrade'>
@@ -212,15 +212,15 @@ class App extends Component {
             path='/:category'
             render={({ match }) => {
               if (match.params.category === 'crueltyFree'){
-                return <h1>Cruelty Free</h1>
+                return <CrueltyFree crueltyFree={this.state.crueltyFree} />
               } else if (match.params.category === 'fairTrade') {
-                return <h1>Fair Trade</h1>
+                return <FairTrade fairTrade={this.state.fairTrade} />
               } else if (match.params.category === 'organic') {
-                return <h1>Organic</h1>;
+                return <Organic organic={this.state.organic} />
               } else if (match.params.category === 'vegan') {
                 return <Vegan vegan={this.state.vegan} />
               } else if (match.params.category === 'zeroWaste') {
-                return <h1>Zero Waste</h1>
+                return <ZeroWaste zeroWaste={this.state.zeroWaste} />
               }
             }}
           />
@@ -232,7 +232,7 @@ class App extends Component {
             if(match.params.category === 'crueltyFree') {
               return (
                 <Items
-                  data={this.state.eco}
+                  data={this.state.crueltyFree}
                   type={match.params.product_type}
                   category={match.params.category}
                 />
@@ -240,7 +240,7 @@ class App extends Component {
             } else if(match.params.category === 'fairTrade') {
               return (
                 <Items
-                  data={this.state.allergenFriendly}
+                  data={this.state.fairTrade}
                   type={match.params.product_type}
                   category={match.params.category}
                 />
@@ -248,7 +248,7 @@ class App extends Component {
             } else if(match.params.category === 'organic') {
               return (
                 <Items
-                  data={this.state.allergenFriendly}
+                  data={this.state.organic}
                   type={match.params.product_type}
                   category={match.params.category}
                 />
@@ -264,7 +264,7 @@ class App extends Component {
             } else if(match.params.category === 'zeroWaste') {
               return (
                 <Items
-                  data={this.state.allergenFriendly}
+                  data={this.state.zeroWaste}
                   type={match.params.product_type}
                   category={match.params.category}
                   />

@@ -4,8 +4,8 @@ import Type from '../Type/Type';
 import './Category.css';
 import PropTypes from 'prop-types';
 
-const Eco = ({eco}) => {
-    const filterMakeupTypes = eco.map((item) => item['product_type']);
+const FairTrade = ({fairTrade}) => {
+    const filterMakeupTypes = fairTrade.map((item) => item['product_type']);
     const productTypes = filterMakeupTypes.filter(
       (item, index) => filterMakeupTypes.indexOf(item) === index
     );
@@ -40,14 +40,14 @@ const Eco = ({eco}) => {
       title={item}
       key={item}
       img={url}
-      category={'eco'}
+      category={'fairTrade'}
       />;
     });
 
     if (productsOnDisplay.length) {
       return (
         <section className='category'>
-          <h2 className='categoryTitle'>Eco</h2>
+          <h2 className='categoryTitle'>Fair Trade</h2>
           <div className='descriptionContainer'>
             <h3 className='definitionHeading'>What is Eco?</h3>
               <p className='categoryDefinition'>
@@ -79,8 +79,8 @@ const Eco = ({eco}) => {
     }
 };
 
-export default Eco;
+export default FairTrade;
 
-Eco.propTypes = {
-  eco: PropTypes.array,
+FairTrade.propTypes = {
+  fairTrade: PropTypes.array,
 };

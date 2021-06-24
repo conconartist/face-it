@@ -4,8 +4,8 @@ import Type from '../Type/Type';
 import './Category.css';
 import PropTypes from 'prop-types';
 
-const AllergenFriendly = ({ allergenFriendly }) => {
-    const filterMakeupTypes = allergenFriendly.map((item) => item['product_type']);
+const Organic = ({organic}) => {
+    const filterMakeupTypes = organic.map((item) => item['product_type']);
     const productTypes = filterMakeupTypes.filter(
       (item, index) => filterMakeupTypes.indexOf(item) === index
     );
@@ -32,30 +32,30 @@ const AllergenFriendly = ({ allergenFriendly }) => {
       } else if(item === 'nail_polish') {
         return 'https://images.unsplash.com/photo-1506668635606-caa9ef5ce079?ixid=MXwxMjA3fDB8MHxwaG90[…]ufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80';
       }
-    };
+    }
 
     const productsOnDisplay = productTypes.map((item) => {
       const url = assignUrl(item)
       return <Type
-        title={item}
-        key={item}
-        img={url}
-        category={'allergenFriendly'}
+      title={item}
+      key={item}
+      img={url}
+      category={'organic'}
       />;
     });
 
     if (productsOnDisplay.length) {
       return (
         <section className='category'>
-          <h2 className='categoryTitle'>Allergen Friendly</h2>
+          <h2 className='categoryTitle'>Organic</h2>
           <div className='descriptionContainer'>
-            <h3 className='definitionHeading'>What is Allergen Friendly?</h3>
+            <h3 className='definitionHeading'>What is Eco?</h3>
               <p className='categoryDefinition'>
-              Products that are labeled free of common allergens that may be likely to trigger allergic reactions: Dairy Free, Gluten Free, Hypoallergenic, Peanut Free, and silicone free>
+              Products that are CertClean, EWG Verified, EcoCert, Non-GMO, USDA Organic, purpicks — We’ve defined that products in the 'Eco' category are considered to be better for the environment, as determined by these respective organizations.
               </p>
-            <h3 className='descriptionHeading'>Why choose Allergen Friendly?</h3>
+            <h3 className='descriptionHeading'>Why choose Eco?</h3>
               <p className='categoryDescription'>
-              If you notice skin irritations or any symptomatic reaction forming when you use certain products, it might be beneficial to look into hypoallergenic products and/or products that are free of common allergens.  Hypoallergenic makeup in particular is usually a gentler formula and often fragrance-free.
+              Organizations like CertClean, EcoCert and EWG have already vetted these products for the impact they have on the environment and for the “clean” benefits based on the amount of harmful chemicals that may or may not be present. Find out more information about each certification under 'Sources' at the bottom of this page.
               </p>
           </div>
           <div className='productContainer'>
@@ -64,8 +64,12 @@ const AllergenFriendly = ({ allergenFriendly }) => {
           <div className='sourcesContainer'>
             <h3 className='sourcesTitle'>Sources</h3>
               <div className='linkContainer'>
-                <a href='https://www.healthline.com/health/hypoallergenic-makeup' target='_blank' rel='noreferrer'>Healthline</a>
-                <a href='https://www.fda.gov/cosmetics/cosmetics-labeling-claims/hypoallergenic-cosmetics' target='_blank' rel='noreferrer'>FDA.gov</a>
+                <a href='https://www.certclean.com/about_us/' target='_blank' rel='noreferrer'>CertClean</a>
+                <a href='https://www.ewg.org/ewgverified/about-the-mark.php' target='_blank' rel='noreferrer'>EWG Verified</a>
+                <a href='https://www.ecocert.com/en-US/certification-detail/natural-and-organic-cosmetics-cosmos' target='_blank' rel='noreferrer'>EcoCert</a>
+                <a href='https://www.nongmoproject.org/gmo-facts/' target='_blank' rel='noreferrer'>Non-GMO</a>
+                <a href='https://www.usda.gov/topics/organic' target='_blank' rel='noreferrer'>USDA Organic</a>
+                <a href='https://www.purpicks.com/aboutus/' target='_blank' rel='noreferrer'>purpicks</a>
               </div>
           </div>
         </section>
@@ -75,8 +79,8 @@ const AllergenFriendly = ({ allergenFriendly }) => {
     }
 };
 
-export default AllergenFriendly;
+export default Organic;
 
-AllergenFriendly.propTypes = {
-  allergenFriendly: PropTypes.array
+Organic.propTypes = {
+  organic: PropTypes.array,
 };
