@@ -2,8 +2,7 @@ import React from 'react';
 import './SingleProduct.css';
 import PropTypes from 'prop-types';
 
-const SingleProduct = ({name, brand, description, tags,  website, img}) => {
-    const styledTags = tags.join(', ');
+const SingleProduct = ({name, brand, description,  website, img}) => {
 
     return (
       <div className='detailsPageWrapper'>
@@ -15,7 +14,6 @@ const SingleProduct = ({name, brand, description, tags,  website, img}) => {
           <div className='singleProductDescriptionWrapper'>
             <p>{description}</p>
           </div>
-            <p className='tags'>{styledTags}</p>
         </section>
       </div>
     );
@@ -29,7 +27,6 @@ SingleProduct.propTypes = {
   brand: PropTypes.string,
   description: PropTypes.string,
   productType: PropTypes.string,
-  tags: PropTypes.array,
   website: PropTypes.string,
   img: PropTypes.string,
 };
