@@ -62,6 +62,7 @@ class App extends Component {
   }
 
   sortByCategory = response => {
+    console.log(response)
     const crueltyFree = response.filter(item => item['cruelty_free'] === 1);
     const fairTrade = response.filter(item => item['fair_trade'] === 1);
     const organic = response.filter(item => item['organic'] === 1);
@@ -139,17 +140,7 @@ class App extends Component {
                       </h2>
                     </div>
                     <section className='categoryContainer'>
-                      <Link to='/eco'>
-                        <article
-                          className='mainCategory'
-                          style={{
-                            backgroundImage: `url(${'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1748&q=80'})`,
-                          }}
-                        >
-                          <h3 className='mainCategoryText'>Eco</h3>
-                        </article>
-                      </Link>
-                      <Link to='/allergenFriendly'>
+                      <Link to='/crueltyFree'>
                         <article
                           className='mainCategory'
                           style={{
@@ -157,10 +148,35 @@ class App extends Component {
                           }}
                         >
                           <h3 className='mainCategoryText'>
-                            Allergen Friendly
+                            Cruelty Free
                           </h3>
                         </article>
                       </Link>
+                      <Link to='/fairTrade'>
+                        <article
+                          className='mainCategory'
+                          style={{
+                            backgroundImage: `url(${'https://images.unsplash.com/photo-1586445781752-63b964aa0404?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'})`,
+                          }}
+                        >
+                          <h3 className='mainCategoryText'>
+                            Fair Trade
+                          </h3>
+                        </article>
+                      </Link>
+                      <Link to='/organic'>
+                        <article
+                          className='mainCategory'
+                          style={{
+                            backgroundImage: `url(${'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1748&q=80'})`,
+                          }}
+                        >
+                          <h3 className='mainCategoryText'>
+                            Organic
+                          </h3>
+                        </article>
+                      </Link>
+                      
                       <Link to='/vegan'>
                         <article
                           className='mainCategory'
@@ -169,6 +185,19 @@ class App extends Component {
                           }}
                         >
                           <h3 className='mainCategoryText'>Vegan</h3>
+                        </article>
+                      </Link>
+
+                      <Link to='/zeroWaste'>
+                        <article
+                          className='mainCategory'
+                          style={{
+                            backgroundImage: `url(${'https://images.unsplash.com/photo-1586445781752-63b964aa0404?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'})`,
+                          }}
+                        >
+                          <h3 className='mainCategoryText'>
+                            Zero Waste
+                          </h3>
                         </article>
                       </Link>
                     </section>
@@ -200,31 +229,47 @@ class App extends Component {
            exact 
            path='/:category/:type'
            render={({ match }) => {
-              if(match.params.category === 'vegan') {
-                return (
-                  <Items
-                    data={this.state.vegan}
-                    type={match.params.type}
-                    category={match.params.category}
-                 />
-                )
-              } else if(match.params.category === 'eco') {
-                return (
-                  <Items
-                    data={this.state.eco}
-                    type={match.params.type}
-                    category={match.params.category}
+            if(match.params.category === 'crueltyFree') {
+              return (
+                <Items
+                  data={this.state.eco}
+                  type={match.params.product_type}
+                  category={match.params.category}
+                />
+              )
+            } else if(match.params.category === 'fairTrade') {
+              return (
+                <Items
+                  data={this.state.allergenFriendly}
+                  type={match.params.product_type}
+                  category={match.params.category}
+                />
+              )
+            } else if(match.params.category === 'organic') {
+              return (
+                <Items
+                  data={this.state.allergenFriendly}
+                  type={match.params.product_type}
+                  category={match.params.category}
+                />
+              )
+            } else if(match.params.category === 'vegan') {
+              return (
+                <Items
+                  data={this.state.vegan}
+                  type={match.params.product_type}
+                  category={match.params.category}
+                />
+              )
+            } else if(match.params.category === 'zeroWaste') {
+              return (
+                <Items
+                  data={this.state.allergenFriendly}
+                  type={match.params.product_type}
+                  category={match.params.category}
                   />
-                )
-              } else if(match.params.category === 'allergenFriendly') {
-                return (
-                  <Items
-                    data={this.state.allergenFriendly}
-                    type={match.params.type}
-                    category={match.params.category}
-                  />
-                )
-              }        
+              )
+            }    
            }}
           />
 
