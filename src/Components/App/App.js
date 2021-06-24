@@ -64,7 +64,6 @@ class App extends Component {
   }
 
   sortByCategory = response => {
-    console.log(response)
     const crueltyFree = response.filter(item => item['cruelty_free'] === 1);
     const fairTrade = response.filter(item => item['fair_trade'] === 1);
     const organic = response.filter(item => item['organic'] === 1);
@@ -278,7 +277,7 @@ class App extends Component {
             path='/:category/:type/:id'
             render={({ match }) => {
               return (
-                <Details makeup={this.state.makeup} id={match.params.id} />
+                <Details id={match.params.id} />
               );
             }}
           />
