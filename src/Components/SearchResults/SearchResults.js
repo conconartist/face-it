@@ -4,6 +4,7 @@ import './SearchResults.css';
 import PropTypes from 'prop-types';
 
 const SearchResults = ({ filteredMakeup }) => {
+  console.log('filteredMakeup', filteredMakeup)
   const itemsToDisplay = filteredMakeup.map((item) => {
     return (
       <SearchResult
@@ -12,7 +13,6 @@ const SearchResults = ({ filteredMakeup }) => {
         name={item.name}
         brand={item.brand}
         img={item['image_link']}
-        tags={item['tag_list']}
         productType={item['product_type']}
       />
     );
