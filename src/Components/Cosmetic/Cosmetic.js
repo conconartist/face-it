@@ -3,7 +3,7 @@ import './Cosmetic.css';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Cosmetic = ({name, brand, img, productType, id, category}) => {
+const Cosmetic = ({id, name, brand, img, productType, category}) => {
 
   return (
     <Link to={`/${category}/${productType}/${id}`}>

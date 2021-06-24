@@ -6,7 +6,7 @@ import { Redirect } from "react-router-dom";
 import LoadingMessage from '../Loading/Loading';
 import apiCalls from '../../apiCalls';
 
-const Details = ({ makeup, id }) => {
+const Details = ({ id }) => {
   const [singleProduct, setSingleProduct] = useState(null);
   const [incorrectId, setIncorrectId] = useState(false);
 
