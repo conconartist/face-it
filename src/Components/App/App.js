@@ -156,7 +156,7 @@ class App extends Component {
                         <article
                           className='mainCategory'
                           style={{
-                            backgroundImage: `url(${'https://images.unsplash.com/photo-1586445781752-63b964aa0404?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'})`,
+                            backgroundImage: `url(${'https://images.unsplash.com/photo-1524661135-423995f22d0b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=753&q=80'})`,
                           }}
                         >
                           <h3 className='mainCategoryText'>
@@ -192,7 +192,7 @@ class App extends Component {
                         <article
                           className='mainCategory'
                           style={{
-                            backgroundImage: `url(${'https://images.unsplash.com/photo-1586445781752-63b964aa0404?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'})`,
+                            backgroundImage: `url(${'https://images.unsplash.com/photo-1566707675793-3ec9e5590bb6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'})`,
                           }}
                         >
                           <h3 className='mainCategoryText'>
