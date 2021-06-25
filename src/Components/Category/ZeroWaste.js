@@ -49,13 +49,13 @@ const ZeroWaste = ({zeroWaste}) => {
         <section className='category'>
           <h2 className='categoryTitle'>Zero Waste</h2>
           <div className='descriptionContainer'>
-            <h3 className='definitionHeading'>What is Eco?</h3>
+            <h3 className='definitionHeading'>What is Zero Waste?</h3>
               <p className='categoryDefinition'>
-              Products that are CertClean, EWG Verified, EcoCert, Non-GMO, USDA Organic, purpicks — We’ve defined that products in the 'Eco' category are considered to be better for the environment, as determined by these respective organizations.
+              Products and its packaging that are made with materials designed in a closed loop system of conserving energy and eliminating harmful waste.  This can be done in ways such as using compostable packaging, refillable containers, or extensive recycling programs.
               </p>
-            <h3 className='descriptionHeading'>Why choose Eco?</h3>
+            <h3 className='descriptionHeading'>Why choose Zero Waste?</h3>
               <p className='categoryDescription'>
-              Organizations like CertClean, EcoCert and EWG have already vetted these products for the impact they have on the environment and for the “clean” benefits based on the amount of harmful chemicals that may or may not be present. Find out more information about each certification under 'Sources' at the bottom of this page.
+              The more we are able to reduce the amount of waste that goes into the landfill, the more we can do to improve and protect the environment.
               </p>
           </div>
           <div className='productContainer'>
@@ -64,12 +64,9 @@ const ZeroWaste = ({zeroWaste}) => {
           <div className='sourcesContainer'>
             <h3 className='sourcesTitle'>Sources</h3>
               <div className='linkContainer'>
-                <a href='https://www.certclean.com/about_us/' target='_blank' rel='noreferrer'>CertClean</a>
-                <a href='https://www.ewg.org/ewgverified/about-the-mark.php' target='_blank' rel='noreferrer'>EWG Verified</a>
-                <a href='https://www.ecocert.com/en-US/certification-detail/natural-and-organic-cosmetics-cosmos' target='_blank' rel='noreferrer'>EcoCert</a>
-                <a href='https://www.nongmoproject.org/gmo-facts/' target='_blank' rel='noreferrer'>Non-GMO</a>
-                <a href='https://www.usda.gov/topics/organic' target='_blank' rel='noreferrer'>USDA Organic</a>
-                <a href='https://www.purpicks.com/aboutus/' target='_blank' rel='noreferrer'>purpicks</a>
+                <a href='https://www.zerowaste.com/blog/what-is-zero-waste-a-guide-to-resource-recovery-and-conservation/' target='_blank' rel='noreferrer'>ZeroWaste</a>
+                <a href='https://www.goingzerowaste.com/zero-waste-1/' target='_blank' rel='noreferrer'>Going Zero Waste</a>
+                <a href='https://www.epa.gov/transforming-waste-tool/how-communities-have-defined-zero-waste' target='_blank' rel='noreferrer'>EPA.gov</a>
               </div>
           </div>
         </section>

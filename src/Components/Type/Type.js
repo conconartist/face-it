@@ -14,7 +14,6 @@ const Type = ({img, title, category}) => {
       return title
     }
   }
-  //add product list component?
 
   return (
     <Link to={`/${category}/${title}`}>
