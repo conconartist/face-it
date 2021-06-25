@@ -3,8 +3,7 @@ import './Cosmetic.css';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Cosmetic = ({name, brand, img, tags, productType, id, category}) => {
-  const styledTags = tags.join(', ');
+const Cosmetic = ({id, name, brand, img, productType, category}) => {
 
   return (
     <Link to={`/${category}/${productType}/${id}`}>
@@ -14,7 +13,6 @@ const Cosmetic = ({name, brand, img, tags, productType, id, category}) => {
           <strong>{brand}</strong>
         </p>
         <p className='cosmeticDetail'>{name}</p>
-        <p className='tags'>{styledTags}</p>
       </article>
     </Link>
   );
@@ -26,7 +24,6 @@ Cosmetic.propTypes = {
   name: PropTypes.string,
   brand: PropTypes.string,
   img: PropTypes.string,
-  tags: PropTypes.array,
   productType: PropTypes.string,
   id: PropTypes.number,
   category: PropTypes.string

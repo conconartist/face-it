@@ -9,7 +9,7 @@ const apiCalls = {
 //need to have local server running
 //please see README for further details
   getLocalData: () => {
-    return getData('http://localhost:3001/api/v1/makeup')
+    return getData('http://localhost:3000/products')
   }
 }
 

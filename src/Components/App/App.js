@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Link, Redirect } from 'react-router-dom';
 import './App.css';
-import Eco from '../Category/Eco';
+import FairTrade from '../Category/FairTrade';
+import Organic from '../Category/Organic';
 import Vegan from '../Category/Vegan';
-import AllergenFriendly from '../Category/AllergenFriendly';
+import ZeroWaste from '../Category/ZeroWaste';
+import CrueltyFree from '../Category/CrueltyFree';
 import Nav from '../Nav/Nav';
 import LoadingMessage from '../Loading/Loading';
 import Logo from '../Logo/Logo';
@@ -20,10 +22,12 @@ class App extends Component {
     super();
     this.state = {
       makeup: [],
+      crueltyFree: [],
+      fairTrade: [], 
       vegan: [],
-      allergenFriendly: [],
-      eco: [],
       filteredMakeup: [],
+      organic: [],
+      zeroWaste: [],
       isFetching: true,
       isSearching: false,
       error: false,
@@ -35,7 +39,7 @@ class App extends Component {
 //when preparing a feature for a build change line 38 to: apiCalls.getApiData()
 
   componentDidMount(){
-    apiCalls.getApiData()
+    apiCalls.getLocalData()
       .then((data) => {
         this.setState({
           makeup: data,
@@ -49,50 +53,30 @@ class App extends Component {
   }
 
   searchMakeup = userInput => {
-    const filteredByTag = [];
-    if(userInput !== '') {
-    this.state.makeup.forEach(item => {
-      const tags = item['tag_list'].map(tag => tag.toLowerCase());
-      if(tags.includes(userInput)) {
-        filteredByTag.push(item)
-      }
-    })
+      if(userInput !== ''){
     const filterWithBrand = this.state.makeup.filter(item => item.brand)
     const filteredByBrand = filterWithBrand.filter(item => {
       return item.brand.toLowerCase().includes(userInput)
     })
-    const uniqueFilteredMakeup = [...new Set(filteredByTag.concat(filteredByBrand))]
+    const uniqueFilteredMakeup = [...new Set(filteredByBrand)]
     this.setState({filteredMakeup: uniqueFilteredMakeup, isSearching: true})
     }
   }
 
   sortByCategory = response => {
-    const vegan = response.filter(item => item['tag_list'].includes('Vegan'));
-    const eco = response.filter(
-      (item) =>
-        item['tag_list'].includes('EWG Verified') ||
-        item['tag_list'].includes('purpicks') ||
-        item['tag_list'].includes('CertClean') ||
-        item['tag_list'].includes('EcoCert') ||
-        item['tag_list'].includes('USDA Organic') ||
-        item['tag_list'].includes('Non-GMO') ||
-        item['tag_list'].includes('Organic')
-    );
-    const allergenFriendly = response.filter(
-      (item) =>
-        item['tag_list'].includes('Dairy Free') ||
-        item['tag_list'].includes('Gluten Free') ||
-        item['tag_list'].includes('Hypoallergenic') ||
-        item['tag_list'].includes('Peanut Free Product') ||
-        item['tag_list'].includes('alcohol free') ||
-        item['tag_list'].includes('silicone free')
-    );
+    const crueltyFree = response.filter(item => item['cruelty_free'] === 1);
+    const fairTrade = response.filter(item => item['fair_trade'] === 1);
+    const organic = response.filter(item => item['organic'] === 1);
+    const vegan = response.filter(item => item['vegan'] === 1);
+    const zeroWaste = response.filter(item => item['zero_waste'] === 1);
     this.setState({
       isSearching: false,
       filteredMakeup: [],
+      crueltyFree: crueltyFree,
+      fairTrade: fairTrade,
+      organic: organic,
       vegan: vegan,
-      eco: eco,
-      allergenFriendly: allergenFriendly,
+      zeroWaste: zeroWaste
     });
   }
 
@@ -157,28 +141,41 @@ class App extends Component {
                       </h2>
                     </div>
                     <section className='categoryContainer'>
-                      <Link to='/eco'>
-                        <article
-                          className='mainCategory'
-                          style={{
-                            backgroundImage: `url(${'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1748&q=80'})`,
-                          }}
-                        >
-                          <h3 className='mainCategoryText'>Eco</h3>
-                        </article>
-                      </Link>
-                      <Link to='/allergenFriendly'>
+                      <Link to='/crueltyFree'>
                         <article
                           className='mainCategory'
                           style={{
                             backgroundImage: `url(${'https://images.unsplash.com/photo-1586445781752-63b964aa0404?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'})`,
                           }}
                         >
+                          <h3 className='mainCategoryText'>Cruelty Free</h3>
+                        </article>
+                      </Link>
+                      <Link to='/fairTrade'>
+                        <article
+                          className='mainCategory'
+                          style={{
+                            backgroundImage: `url(${'https://images.unsplash.com/photo-1524661135-423995f22d0b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=753&q=80'})`,
+                          }}
+                        >
                           <h3 className='mainCategoryText'>
-                            Allergen Friendly
+                            Fair Trade
                           </h3>
                         </article>
                       </Link>
+                      <Link to='/organic'>
+                        <article
+                          className='mainCategory'
+                          style={{
+                            backgroundImage: `url(${'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1748&q=80'})`,
+                          }}
+                        >
+                          <h3 className='mainCategoryText'>
+                            Organic
+                          </h3>
+                        </article>
+                      </Link>
+                      
                       <Link to='/vegan'>
                         <article
                           className='mainCategory'
@@ -187,6 +184,19 @@ class App extends Component {
                           }}
                         >
                           <h3 className='mainCategoryText'>Vegan</h3>
+                        </article>
+                      </Link>
+
+                      <Link to='/zeroWaste'>
+                        <article
+                          className='mainCategory'
+                          style={{
+                            backgroundImage: `url(${'https://images.unsplash.com/photo-1566707675793-3ec9e5590bb6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'})`,
+                          }}
+                        >
+                          <h3 className='mainCategoryText'>
+                            Zero Waste
+                          </h3>
                         </article>
                       </Link>
                     </section>
@@ -200,16 +210,16 @@ class App extends Component {
             exact
             path='/:category'
             render={({ match }) => {
-              if (match.params.category === 'vegan') {
-                return <Vegan vegan={this.state.vegan} />;
-              } else if (match.params.category === 'allergenFriendly') {
-                return (
-                  <AllergenFriendly
-                    allergenFriendly={this.state.allergenFriendly}
-                  />
-                );
-              } else if (match.params.category === 'eco') {
-                return <Eco eco={this.state.eco} />;
+              if (match.params.category === 'crueltyFree'){
+                return <CrueltyFree crueltyFree={this.state.crueltyFree} />
+              } else if (match.params.category === 'fairTrade') {
+                return <FairTrade fairTrade={this.state.fairTrade} />
+              } else if (match.params.category === 'organic') {
+                return <Organic organic={this.state.organic} />
+              } else if (match.params.category === 'vegan') {
+                return <Vegan vegan={this.state.vegan} />
+              } else if (match.params.category === 'zeroWaste') {
+                return <ZeroWaste zeroWaste={this.state.zeroWaste} />
               }
             }}
           />
@@ -218,31 +228,47 @@ class App extends Component {
            exact 
            path='/:category/:type'
            render={({ match }) => {
-              if(match.params.category === 'vegan') {
-                return (
-                  <Items
-                    data={this.state.vegan}
-                    type={match.params.type}
-                    category={match.params.category}
-                 />
-                )
-              } else if(match.params.category === 'eco') {
-                return (
-                  <Items
-                    data={this.state.eco}
-                    type={match.params.type}
-                    category={match.params.category}
+            if(match.params.category === 'crueltyFree') {
+              return (
+                <Items
+                  data={this.state.crueltyFree}
+                  type={match.params.product_type}
+                  category={match.params.category}
+                />
+              )
+            } else if(match.params.category === 'fairTrade') {
+              return (
+                <Items
+                  data={this.state.fairTrade}
+                  type={match.params.product_type}
+                  category={match.params.category}
+                />
+              )
+            } else if(match.params.category === 'organic') {
+              return (
+                <Items
+                  data={this.state.organic}
+                  type={match.params.product_type}
+                  category={match.params.category}
+                />
+              )
+            } else if(match.params.category === 'vegan') {
+              return (
+                <Items
+                  data={this.state.vegan}
+                  type={match.params.product_type}
+                  category={match.params.category}
+                />
+              )
+            } else if(match.params.category === 'zeroWaste') {
+              return (
+                <Items
+                  data={this.state.zeroWaste}
+                  type={match.params.product_type}
+                  category={match.params.category}
                   />
-                )
-              } else if(match.params.category === 'allergenFriendly') {
-                return (
-                  <Items
-                    data={this.state.allergenFriendly}
-                    type={match.params.type}
-                    category={match.params.category}
-                  />
-                )
-              }        
+              )
+            }    
            }}
           />
 
@@ -251,7 +277,7 @@ class App extends Component {
             path='/:category/:type/:id'
             render={({ match }) => {
               return (
-                <Details makeup={this.state.makeup} id={match.params.id} />
+                <Details id={match.params.id} />
               );
             }}
           />

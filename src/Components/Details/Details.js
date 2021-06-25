@@ -6,13 +6,13 @@ import { Redirect } from "react-router-dom";
 import LoadingMessage from '../Loading/Loading';
 import apiCalls from '../../apiCalls';
 
-const Details = ({ makeup, id }) => {
+const Details = ({ id }) => {
   const [singleProduct, setSingleProduct] = useState(null);
   const [incorrectId, setIncorrectId] = useState(false);
 
   useEffect(() => {
     const detailsAPI = () => {
-      return apiCalls.getApiData()
+      return apiCalls.getLocalData()
       .then((data) => {
         if( data.length ) {
           const singleMakeup = data.find((item) => item.id === parseInt(id))
@@ -40,7 +40,6 @@ return (
       img={singleProduct["image_link"]}
       description={singleProduct.description}
       productType={singleProduct["product_type"]}
-      tags={singleProduct["tag_list"]}
       website={singleProduct["website_link"]}
       />
     }

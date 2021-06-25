@@ -10,14 +10,20 @@ const Nav = ({handleClick}) => {
           <p onClick={() => handleClick()}>Home</p>
         </Link>
       <div className='categoryNavList'>
-        <Link to='/eco'>
-          <p onClick={() => handleClick()}>Eco</p>
+        <Link to='/crueltyFree'>
+          <p onClick={() => handleClick()}>CrueltyFree</p>
         </Link>
-        <Link to='/allergenFriendly'>
-          <p onClick={() => handleClick()}>Allergen Friendly</p>
+        <Link to='/fairTrade'>
+          <p onClick={() => handleClick()}>Fair Trade</p>
+        </Link>
+        <Link to='/organic'>
+          <p onClick={() => handleClick()}>Organic</p>
         </Link>
         <Link to='/vegan'>
           <p onClick={() => handleClick()}>Vegan</p>
+        </Link>
+        <Link to='/zeroWaste'>
+          <p onClick={() => handleClick()}>Zero Waste</p>
         </Link>
       </div>
     </nav>

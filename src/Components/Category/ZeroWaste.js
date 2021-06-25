@@ -4,10 +4,11 @@ import Type from '../Type/Type';
 import './Category.css';
 import PropTypes from 'prop-types';
 
-const Vegan = ({ vegan }) => {
-  console.log('vegan', vegan)
-    const filterMakeupTypes = vegan.map((item) => item['product_type']);
-    const productTypes = filterMakeupTypes.filter((item, index) => filterMakeupTypes.indexOf(item) === index);
+const ZeroWaste = ({zeroWaste}) => {
+    const filterMakeupTypes = zeroWaste.map((item) => item['product_type']);
+    const productTypes = filterMakeupTypes.filter(
+      (item, index) => filterMakeupTypes.indexOf(item) === index
+    );
 
     const assignUrl = (item) => {
       if(item === 'mascara') {
@@ -31,35 +32,30 @@ const Vegan = ({ vegan }) => {
       } else if(item === 'nail_polish') {
         return 'https://images.unsplash.com/photo-1506668635606-caa9ef5ce079?ixid=MXwxMjA3fDB8MHxwaG90[…]ufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80';
       }
-    };
+    }
 
     const productsOnDisplay = productTypes.map((item) => {
-      console.log('item', item)
       const url = assignUrl(item)
       return <Type
-                title={item}
-                key={item}
-                img={url}
-                id={item}
-                category={'vegan'}
-              />;
+      title={item}
+      key={item}
+      img={url}
+      category={'zeroWaste'}
+      />;
     });
-
 
     if (productsOnDisplay.length) {
       return (
         <section className='category'>
-          <h2 className='categoryTitle'>Vegan</h2>
+          <h2 className='categoryTitle'>Zero Waste</h2>
           <div className='descriptionContainer'>
-            <h3 className='definitionHeading'>What is Vegan?</h3>
+            <h3 className='definitionHeading'>What is Eco?</h3>
               <p className='categoryDefinition'>
-                Products that are free of animal ingredients.
+              Products that are CertClean, EWG Verified, EcoCert, Non-GMO, USDA Organic, purpicks — We’ve defined that products in the 'Eco' category are considered to be better for the environment, as determined by these respective organizations.
               </p>
-            <h3 className='descriptionHeading'>Why choose Vegan?</h3>
+            <h3 className='descriptionHeading'>Why choose Eco?</h3>
               <p className='categoryDescription'>
-              Many products contain animal products that include dairy, honey, or beeswax, as you might expect.  It is also common for beauty products to include urine, ground hooves, insects, sheep wool, and other by-products one normally wouldn’t think of when purchasing their beauty products.
-              <br></br>
-              A vegan diet favors plant-based food, so naturally, vegan products are more likely to contain natural, plant-based ingredients. Vegan packaging also tends to be more environmentally-friendly, as these products are usually geared towards those who value healthy and conscious living.
+              Organizations like CertClean, EcoCert and EWG have already vetted these products for the impact they have on the environment and for the “clean” benefits based on the amount of harmful chemicals that may or may not be present. Find out more information about each certification under 'Sources' at the bottom of this page.
               </p>
           </div>
           <div className='productContainer'>
@@ -68,22 +64,23 @@ const Vegan = ({ vegan }) => {
           <div className='sourcesContainer'>
             <h3 className='sourcesTitle'>Sources</h3>
               <div className='linkContainer'>
-                <a href='https://www.nytimes.com/2019/02/26/style/why-you-should-care-about-vegan-beauty.html' target='_blank' rel='noreferrer'>New York Times</a>
-                <a href='https://www.piperberry.com/blogs/clean-beauty-blog/9-excellent-reasons-to-start-using-vegan-beauty-products' target='_blank' rel='noreferrer'>Piperberry</a>
-                <a href='https://www.cosmopolitan.com/uk/beauty-hair/makeup/a45915/vegan-makeup/' target='_blank' rel='noreferrer'>Cosmopolitan Magazine</a>
+                <a href='https://www.certclean.com/about_us/' target='_blank' rel='noreferrer'>CertClean</a>
+                <a href='https://www.ewg.org/ewgverified/about-the-mark.php' target='_blank' rel='noreferrer'>EWG Verified</a>
+                <a href='https://www.ecocert.com/en-US/certification-detail/natural-and-organic-cosmetics-cosmos' target='_blank' rel='noreferrer'>EcoCert</a>
+                <a href='https://www.nongmoproject.org/gmo-facts/' target='_blank' rel='noreferrer'>Non-GMO</a>
+                <a href='https://www.usda.gov/topics/organic' target='_blank' rel='noreferrer'>USDA Organic</a>
+                <a href='https://www.purpicks.com/aboutus/' target='_blank' rel='noreferrer'>purpicks</a>
               </div>
           </div>
         </section>
       )
-    } else {
+    } else if (!productsOnDisplay.length) {
       return <Redirect to='/error' />
     }
 };
 
+export default ZeroWaste;
 
-
-export default Vegan;
-
-Vegan.propTypes = {
-  vegan: PropTypes.array,
+ZeroWaste.propTypes = {
+  zeroWaste: PropTypes.array,
 };

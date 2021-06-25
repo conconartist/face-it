@@ -5,12 +5,16 @@ import PropTypes from 'prop-types';
 
 const Type = ({img, title, category}) => {
   const checkTitle = (title) => {
+    // edit titles of makeup types
+    console.log(title, 'title')
+
     if (title.includes('_')){
       return title.split('_').join(' ')
     } else {
       return title
     }
   }
+  //add product list component?
 
   return (
     <Link to={`/${category}/${title}`}>
