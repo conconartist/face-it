@@ -49,13 +49,13 @@ const CrueltyFree = ({ crueltyFree }) => {
         <section className='category'>
           <h2 className='categoryTitle'>Cruelty Free</h2>
           <div className='descriptionContainer'>
-            <h3 className='definitionHeading'>What is Allergen Friendly?</h3>
+            <h3 className='definitionHeading'>What is Cruelty Free?</h3>
               <p className='categoryDefinition'>
-              Products that are labeled free of common allergens that may be likely to trigger allergic reactions: Dairy Free, Gluten Free, Hypoallergenic, Peanut Free, and silicone free>
+              Products that are developed without product testing on animals.
               </p>
-            <h3 className='descriptionHeading'>Why choose Allergen Friendly?</h3>
+            <h3 className='descriptionHeading'>Why choose Cruelty Free?</h3>
               <p className='categoryDescription'>
-              If you notice skin irritations or any symptomatic reaction forming when you use certain products, it might be beneficial to look into hypoallergenic products and/or products that are free of common allergens.  Hypoallergenic makeup in particular is usually a gentler formula and often fragrance-free.
+              Cruelty Free products ensure that animals are not being harmed or abused in ways that can occur during the testing process or production of makeup products.  
               </p>
           </div>
           <div className='productContainer'>
@@ -64,8 +64,8 @@ const CrueltyFree = ({ crueltyFree }) => {
           <div className='sourcesContainer'>
             <h3 className='sourcesTitle'>Sources</h3>
               <div className='linkContainer'>
-                <a href='https://www.healthline.com/health/hypoallergenic-makeup' target='_blank' rel='noreferrer'>Healthline</a>
-                <a href='https://www.fda.gov/cosmetics/cosmetics-labeling-claims/hypoallergenic-cosmetics' target='_blank' rel='noreferrer'>FDA.gov</a>
+                <a href='https://www.peta.org/living/personal-care-fashion/beauty-without-bunnies/' target='_blank' rel='noreferrer'>PETA</a>
+                <a href='https://www.thegoodtrade.com/lists/cruelty-free-makeup-brands' target='_blank' rel='noreferrer'>The Good Trade</a>
               </div>
           </div>
         </section>
