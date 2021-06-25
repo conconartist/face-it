@@ -40,6 +40,7 @@ class App extends Component {
 
   componentDidMount(){
     apiCalls.getLocalData()
+    
       .then((data) => {
         this.setState({
           makeup: data,
@@ -51,7 +52,7 @@ class App extends Component {
         this.setState({error: true, isFetching: false})
       });
   }
-
+ 
   searchMakeup = userInput => {
       if(userInput !== ''){
     const filterWithBrand = this.state.makeup.filter(item => item.brand)

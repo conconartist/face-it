@@ -4,10 +4,9 @@ import './Items.css';
 import PropTypes from 'prop-types';
 
 
-const Items = ({ data, type, category }) => {
-  console.log('items', data)
+const Items = ({ data, category }) => {
   const cosmeticToDisplay = data.map(item => {
-    console.log('item', item)
+    
     return <Cosmetic
     id={item.id}
     key={item.id}
@@ -30,6 +29,5 @@ export default Items;
 
 Items.propTypes = {
   data: PropTypes.array,
-  type: PropTypes.string,
   category: PropTypes.string,
 };
