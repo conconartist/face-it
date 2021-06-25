@@ -49,13 +49,13 @@ const FairTrade = ({fairTrade}) => {
         <section className='category'>
           <h2 className='categoryTitle'>Fair Trade</h2>
           <div className='descriptionContainer'>
-            <h3 className='definitionHeading'>What is Eco?</h3>
+            <h3 className='definitionHeading'>What is Fair Trade?</h3>
               <p className='categoryDefinition'>
-              Products that are CertClean, EWG Verified, EcoCert, Non-GMO, USDA Organic, purpicks — We’ve defined that products in the 'Eco' category are considered to be better for the environment, as determined by these respective organizations.
+              Products that are Fair Trade certified, equating to better working conditions for the people who made these products.
               </p>
-            <h3 className='descriptionHeading'>Why choose Eco?</h3>
+            <h3 className='descriptionHeading'>Why choose Fair Trade?</h3>
               <p className='categoryDescription'>
-              Organizations like CertClean, EcoCert and EWG have already vetted these products for the impact they have on the environment and for the “clean” benefits based on the amount of harmful chemicals that may or may not be present. Find out more information about each certification under 'Sources' at the bottom of this page.
+              Fair Trade is "people first", considering the ethical and moral implications of who is making the products we consume. 
               </p>
           </div>
           <div className='productContainer'>
@@ -64,12 +64,8 @@ const FairTrade = ({fairTrade}) => {
           <div className='sourcesContainer'>
             <h3 className='sourcesTitle'>Sources</h3>
               <div className='linkContainer'>
-                <a href='https://www.certclean.com/about_us/' target='_blank' rel='noreferrer'>CertClean</a>
-                <a href='https://www.ewg.org/ewgverified/about-the-mark.php' target='_blank' rel='noreferrer'>EWG Verified</a>
-                <a href='https://www.ecocert.com/en-US/certification-detail/natural-and-organic-cosmetics-cosmos' target='_blank' rel='noreferrer'>EcoCert</a>
-                <a href='https://www.nongmoproject.org/gmo-facts/' target='_blank' rel='noreferrer'>Non-GMO</a>
-                <a href='https://www.usda.gov/topics/organic' target='_blank' rel='noreferrer'>USDA Organic</a>
-                <a href='https://www.purpicks.com/aboutus/' target='_blank' rel='noreferrer'>purpicks</a>
+                <a href='https://www.refinery29.com/en-us/best-fair-trade-beauty-products' target='_blank' rel='noreferrer'>Refinery29</a>
+                <a href='https://www.redbookmag.com/beauty/makeup-skincare/advice/a4115/fair-trade-beauty-products/' target='_blank' rel='noreferrer'>redbook</a>
               </div>
           </div>
         </section>
