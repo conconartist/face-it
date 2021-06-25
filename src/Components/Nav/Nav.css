@@ -29,8 +29,9 @@ li {
 nav a {
     color:#F4E9E1;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     text-align: right;
+    padding: 0.4em;
 }
 
 nav a:active {
