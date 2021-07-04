@@ -34,7 +34,7 @@ const Organic = ({organic}) => {
       }
     };
 
-    const productsOnDisplay = productTypes.map((item) => {
+    const productTypesOnDisplay = productTypes.map((item) => {
       const url = assignUrl(item)
       return <Type
       title={item}
@@ -44,7 +44,7 @@ const Organic = ({organic}) => {
       />;
     });
 
-    if (productsOnDisplay.length) {
+    if (productTypesOnDisplay.length) {
       return (
         <section className='category'>
           <h2 className='categoryTitle'>Organic</h2>
@@ -59,7 +59,7 @@ const Organic = ({organic}) => {
               </p>
           </div>
           <div className='productContainer'>
-            {productsOnDisplay}
+            {productTypesOnDisplay}
           </div>
           <div className='sourcesContainer'>
             <h3 className='sourcesTitle'>Sources</h3>
@@ -72,7 +72,7 @@ const Organic = ({organic}) => {
           </div>
         </section>
       )
-    } else if (!productsOnDisplay.length) {
+    } else if (!productTypesOnDisplay.length) {
       return <Redirect to='/error' />
     }
 };

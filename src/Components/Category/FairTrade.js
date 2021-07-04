@@ -34,7 +34,7 @@ const FairTrade = ({fairTrade}) => {
       }
     };
 
-    const productsOnDisplay = productTypes.map((item) => {
+    const productTypesOnDisplay = productTypes.map((item) => {
       const url = assignUrl(item)
       return <Type
       title={item}
@@ -44,7 +44,7 @@ const FairTrade = ({fairTrade}) => {
       />;
     });
 
-    if (productsOnDisplay.length) {
+    if (productTypesOnDisplay.length) {
       return (
         <section className='category'>
           <h2 className='categoryTitle'>Fair Trade</h2>
@@ -59,7 +59,7 @@ const FairTrade = ({fairTrade}) => {
               </p>
           </div>
           <div className='productContainer'>
-            {productsOnDisplay}
+            {productTypesOnDisplay}
           </div>
           <div className='sourcesContainer'>
             <h3 className='sourcesTitle'>Sources</h3>
@@ -70,7 +70,7 @@ const FairTrade = ({fairTrade}) => {
           </div>
         </section>
       )
-    } else if (!productsOnDisplay.length) {
+    } else if (!productTypesOnDisplay.length) {
       return <Redirect to='/error' />
     }
 };

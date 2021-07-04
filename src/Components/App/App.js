@@ -87,8 +87,8 @@ class App extends Component {
       filteredMakeup: [],
     });
   }
-
   render() {
+    console.log(this.state.crueltyFree)
     return (
       <main>
         <Nav handleClick={this.handleClick} />
@@ -233,7 +233,7 @@ class App extends Component {
               return (
                 <Items
                   data={this.state.crueltyFree}
-                  type={match.params.product_type}
+                  type={match.params.type}
                   category={match.params.category}
                 />
               )
@@ -241,7 +241,7 @@ class App extends Component {
               return (
                 <Items
                   data={this.state.fairTrade}
-                  type={match.params.product_type}
+                  type={match.params.type}
                   category={match.params.category}
                 />
               )
@@ -249,7 +249,7 @@ class App extends Component {
               return (
                 <Items
                   data={this.state.organic}
-                  type={match.params.product_type}
+                  type={match.params.type}
                   category={match.params.category}
                 />
               )
@@ -257,7 +257,7 @@ class App extends Component {
               return (
                 <Items
                   data={this.state.vegan}
-                  type={match.params.product_type}
+                  type={match.params.type}
                   category={match.params.category}
                 />
               )
@@ -265,7 +265,7 @@ class App extends Component {
               return (
                 <Items
                   data={this.state.zeroWaste}
-                  type={match.params.product_type}
+                  type={match.params.type}
                   category={match.params.category}
                   />
               )
