@@ -4,7 +4,6 @@ import './SearchResults.css';
 import PropTypes from 'prop-types';
 
 const SearchResults = ({ filteredMakeup }) => {
-  console.log('filteredMakeup', filteredMakeup)
   const itemsToDisplay = filteredMakeup.map((item) => {
     return (
       <SearchResult

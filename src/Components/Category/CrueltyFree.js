@@ -46,7 +46,6 @@ const CrueltyFree = ({ crueltyFree }) => {
     });
 
     if (productTypesOnDisplay.length) {
-      console.log('productTypesOnDisplay', productTypesOnDisplay)
       return (
         <section className='category'>
           <h2 className='categoryTitle'>Cruelty Free</h2>

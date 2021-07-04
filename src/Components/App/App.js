@@ -88,7 +88,6 @@ class App extends Component {
     });
   }
   render() {
-    console.log(this.state.crueltyFree)
     return (
       <main>
         <Nav handleClick={this.handleClick} />
