@@ -34,17 +34,18 @@ const CrueltyFree = ({ crueltyFree }) => {
       }
     };
 
-    const productsOnDisplay = productTypes.map((item) => {
+    const productTypesOnDisplay = productTypes.map((item) => {
       const url = assignUrl(item)
       return <Type
         title={item}
         key={item}
         img={url}
         category={'crueltyFree'}
+        type={item['product_type']}
       />;
     });
 
-    if (productsOnDisplay.length) {
+    if (productTypesOnDisplay.length) {
       return (
         <section className='category'>
           <h2 className='categoryTitle'>Cruelty Free</h2>
@@ -59,7 +60,7 @@ const CrueltyFree = ({ crueltyFree }) => {
               </p>
           </div>
           <div className='productContainer'>
-            {productsOnDisplay}
+            {productTypesOnDisplay}
           </div>
           <div className='sourcesContainer'>
             <h3 className='sourcesTitle'>Sources</h3>
@@ -70,7 +71,7 @@ const CrueltyFree = ({ crueltyFree }) => {
           </div>
         </section>
       )
-    } else if (!productsOnDisplay.length) {
+    } else if (!productTypesOnDisplay.length) {
       return <Redirect to='/error' />
     }
 };

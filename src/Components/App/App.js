@@ -39,7 +39,7 @@ class App extends Component {
 //when preparing a feature for a build change line 38 to: apiCalls.getApiData()
 
   componentDidMount(){
-    apiCalls.getLocalData()
+    apiCalls.getApiData()
     
       .then((data) => {
         this.setState({
@@ -87,7 +87,6 @@ class App extends Component {
       filteredMakeup: [],
     });
   }
-
   render() {
     return (
       <main>
@@ -233,7 +232,7 @@ class App extends Component {
               return (
                 <Items
                   data={this.state.crueltyFree}
-                  type={match.params.product_type}
+                  type={match.params.type}
                   category={match.params.category}
                 />
               )
@@ -241,7 +240,7 @@ class App extends Component {
               return (
                 <Items
                   data={this.state.fairTrade}
-                  type={match.params.product_type}
+                  type={match.params.type}
                   category={match.params.category}
                 />
               )
@@ -249,7 +248,7 @@ class App extends Component {
               return (
                 <Items
                   data={this.state.organic}
-                  type={match.params.product_type}
+                  type={match.params.type}
                   category={match.params.category}
                 />
               )
@@ -257,7 +256,7 @@ class App extends Component {
               return (
                 <Items
                   data={this.state.vegan}
-                  type={match.params.product_type}
+                  type={match.params.type}
                   category={match.params.category}
                 />
               )
@@ -265,7 +264,7 @@ class App extends Component {
               return (
                 <Items
                   data={this.state.zeroWaste}
-                  type={match.params.product_type}
+                  type={match.params.type}
                   category={match.params.category}
                   />
               )

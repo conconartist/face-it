@@ -34,7 +34,7 @@ const ZeroWaste = ({zeroWaste}) => {
       }
     };
 
-    const productsOnDisplay = productTypes.map((item) => {
+    const productTypesOnDisplay = productTypes.map((item) => {
       const url = assignUrl(item)
       return <Type
       title={item}
@@ -44,7 +44,7 @@ const ZeroWaste = ({zeroWaste}) => {
       />;
     });
 
-    if (productsOnDisplay.length) {
+    if (productTypesOnDisplay.length) {
       return (
         <section className='category'>
           <h2 className='categoryTitle'>Zero Waste</h2>
@@ -59,7 +59,7 @@ const ZeroWaste = ({zeroWaste}) => {
               </p>
           </div>
           <div className='productContainer'>
-            {productsOnDisplay}
+            {productTypesOnDisplay}
           </div>
           <div className='sourcesContainer'>
             <h3 className='sourcesTitle'>Sources</h3>
@@ -71,7 +71,7 @@ const ZeroWaste = ({zeroWaste}) => {
           </div>
         </section>
       )
-    } else if (!productsOnDisplay.length) {
+    } else if (!productTypesOnDisplay.length) {
       return <Redirect to='/error' />
     }
 };

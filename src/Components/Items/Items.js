@@ -4,18 +4,18 @@ import './Items.css';
 import PropTypes from 'prop-types';
 
 
-const Items = ({ data, category }) => {
-  const cosmeticToDisplay = data.map(item => {
-    
-    return <Cosmetic
-    id={item.id}
-    key={item.id}
-    name={item.name}
-    brand={item.brand}
-    img={item['image_link']}
-    productType={item['product_type']}
-    category={category}
-    />
+const Items = ({ data, type, category }) => {
+  const filteredCosmetics = data.filter(item => type === item['product_type']);
+  const cosmeticToDisplay = filteredCosmetics.map(item => {
+      return <Cosmetic
+      id={item.id}
+      key={item.id}
+      name={item.name}
+      brand={item.brand}
+      img={item['image_link']}
+      productType={item.type}
+      category={category}
+      />
   })
 
   return (

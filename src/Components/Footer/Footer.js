@@ -8,16 +8,8 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer>
-      <h4>FaceIt</h4>
-      <h5>is brought to you by</h5>
+      <h5>This version of FaceIt is brought to you by</h5>
         <div className='dev-container'>
-          <div className='dev'>
-            <p>Kelsie Besinger Yeh</p>
-              <div className='links'>
-                <a href='https://github.com/kelsiebesingeryeh/'><img src={github} alt='Kelsie GitHub' /></a>
-                <a href='https://www.linkedin.com/in/kelsie-besinger-yeh-80947132/'><img src={linkedin} alt='Kelsie LinkedIn' /></a>
-              </div>
-          </div>
           <div className='dev'>
             <p>Connie Hong </p>
               <div className='links'>
@@ -26,13 +18,10 @@ const Footer = () => {
                 <a href='https://twitter.com/conconartist?ref_src=twsrc%5Etfw' class='twitter-follow-button' data-show-count='false'><img src={twitter} alt='Connie Twitter' /></a>
               </div>
           </div>
-          <div className='dev'>
-            <p>Gabrielle Joyce</p>
-              <div className='links'>
-                <a href='https://github.com/gaj23'><img src={github} alt='Gabrielle GitHub' /></a>
-                <a href='https://www.linkedin.com/in/gaj23/'><img src={linkedin} alt='Gabrielle LinkedIn' /></a>
-              </div>
-          </div>
+        </div>
+        <div className='links'>
+          <h4>To view the original version, you can view the <a href='https://github.com/conconartist/face-it'>repository</a> or go to the <a href='https://face-it.vercel.app/'>deployed site</a>.
+          </h4>
         </div>
       <Logo />
     </footer>

@@ -5,7 +5,6 @@ import './Category.css';
 import PropTypes from 'prop-types';
 
 const Vegan = ({ vegan }) => {
-  console.log('vegan', vegan)
     const filterMakeupTypes = vegan.map((item) => item['product_type']);
     const productTypes = filterMakeupTypes.filter((item, index) => filterMakeupTypes.indexOf(item) === index);
 
@@ -33,8 +32,7 @@ const Vegan = ({ vegan }) => {
       }
     };
 
-    const productsOnDisplay = productTypes.map((item) => {
-      console.log('item', item)
+    const productTypesOnDisplay = productTypes.map((item) => {
       const url = assignUrl(item)
       return <Type
                 title={item}
@@ -46,7 +44,7 @@ const Vegan = ({ vegan }) => {
     });
 
 
-    if (productsOnDisplay.length) {
+    if (productTypesOnDisplay.length) {
       return (
         <section className='category'>
           <h2 className='categoryTitle'>Vegan</h2>
@@ -63,7 +61,7 @@ const Vegan = ({ vegan }) => {
               </p>
           </div>
           <div className='productContainer'>
-            {productsOnDisplay}
+            {productTypesOnDisplay}
           </div>
           <div className='sourcesContainer'>
             <h3 className='sourcesTitle'>Sources</h3>
