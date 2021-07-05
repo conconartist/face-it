@@ -19,10 +19,10 @@ const Footer = () => {
               </div>
           </div>
         </div>
-        <h4>To view the original version, you can find it here:</h4>
-          <div className='links'>
-            <a href='https://github.com/conconartist/face-it'><img src={github} alt='FaceIt Repository' /></a>
-          </div>
+        <div className='links'>
+          <h4>To view the original version, you can view the <a href='https://github.com/conconartist/face-it'>repository</a> or go to the <a href='https://face-it.vercel.app/'>deployed site</a>.
+          </h4>
+        </div>
       <Logo />
     </footer>
   )
