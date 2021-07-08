@@ -7,23 +7,23 @@ const Nav = ({handleClick}) => {
   return (
     <nav>
         <Link to='/'>
-          <p onClick={() => handleClick()}>Home</p>
+          <p className='navText' onClick={() => handleClick()}>Home</p>
         </Link>
       <div className='categoryNavList'>
         <Link to='/crueltyFree'>
-          <p onClick={() => handleClick()}>CrueltyFree</p>
+          <p className='navText' onClick={() => handleClick()}>CrueltyFree</p>
         </Link>
         <Link to='/fairTrade'>
-          <p onClick={() => handleClick()}>Fair Trade</p>
+          <p className='navText' onClick={() => handleClick()}>Fair Trade</p>
         </Link>
         <Link to='/organic'>
-          <p onClick={() => handleClick()}>Organic</p>
+          <p className='navText' onClick={() => handleClick()}>Organic</p>
         </Link>
         <Link to='/vegan'>
-          <p onClick={() => handleClick()}>Vegan</p>
+          <p className='navText' onClick={() => handleClick()}>Vegan</p>
         </Link>
         <Link to='/zeroWaste'>
-          <p onClick={() => handleClick()}>Zero Waste</p>
+          <p className='navText' onClick={() => handleClick()}>Zero Waste</p>
         </Link>
       </div>
     </nav>
