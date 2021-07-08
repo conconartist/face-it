@@ -9,7 +9,6 @@ nav {
 nav ul {
     display: flex;
     margin: 0;
-    padding: 0.5rem;
 }
 
 nav ul li {
@@ -20,10 +19,9 @@ nav ul li:first-child {
     margin-right: auto;
 }
 
-li {
+.navText {
     font-weight: bold;
-    font-size: 1.25rem;
-    padding: 0.5em;
+    font-size: 0.75rem;
 }
 
 nav a {
@@ -51,3 +49,9 @@ nav a:hover {
 .categoryNavList a {
     margin-left: 1rem;
 }
+
+@media screen and (min-width: 800px) {
+    .navText {
+        font-size: 1rem;
+    }
+  }

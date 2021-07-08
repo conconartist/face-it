@@ -8,6 +8,11 @@
 .categoryDefinition {
     align-items: center;
     display: flex;
+    margin: 1em;
+}
+
+.categoryDescription {
+    margin: 1em;
 }
 .categoryTitle {
     display: flex;
@@ -31,8 +36,14 @@
 }
 
 .productContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+}
+
+.productType {
+    height: 12vh;
+    width: 90%;
 }
 
 .sourcesContainer {
@@ -48,8 +59,11 @@
     margin-bottom: 0;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   .productContainer {
-    grid-template-columns: 3 1fr;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    padding: 5rem;
   }
 }
