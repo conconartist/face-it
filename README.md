@@ -15,49 +15,30 @@ https://face-it-blue.vercel.app/
 ### In Action:
 
 
-![home page]()
+![home page](https://media.giphy.com/media/Q27dSW1oCkir6KH52b/giphy.gif)
 
 #### Category Page
 A user can select a category type and view makeup products available in that category.
 
-![example]()
+![example](https://media.giphy.com/media/u925vFVwuUr8GE5lGZ/giphy.gif)
 
 #### Product Page
 A user can select a category type, view makeup products available, and then view the items of that product type in that category.
-
-<details>
-<summary>Example of Mobile Experience</summary>
-<br>
-<img width="283" alt="Product page interaction" src="https://media.giphy.com/media/OGqhmkyEZEIwisuFvO/giphy.gif" />
-</details>
 
 
 #### Cosmetic Details
 A user can view a particular cosmetic's details such as brand, listed price, and available colors of that cosmetic.
 
-<details>
-<summary>Example of Mobile Experience</summary>
-<br>
-<img width="283" alt="viewing cosmetic details" src="https://media.giphy.com/media/BgfWldURYP7lcnqwJV/giphy.gif" />
-</details>
+![example](https://media.giphy.com/media/53QJJs5Ctklkk9YlaP/giphy.gif)
 
 #### Search Bar
-A user can search for a product by the certification tag (such as 'organic' or 'gluten free') or brand (such as 'e.l.f')
+A user can search for a product by brand.
 
-<details>
-<summary>Example of Mobile Experience</summary>
-<br>
-<img width="283" alt="using the navigation bar to search" src="https://media.giphy.com/media/VUpTsyooy89hO1mvtN/giphy.gif" />
-</details>
+![example](https://media.giphy.com/media/eT9aDCAIoFuK67MN4Z/giphy.gif)
 
-#### Desktop Additions
-Note hover functionality
+#### Mobile Responsiveness
 
-<details>
-<summary>Example of Mobile Experience</summary>
-<br>
-<img width="283" alt="desktop hover abilities" src="https://media.giphy.com/media/uyW7BBvvaAEnreuvWy/giphy.gif" />
-</details>
+![example](https://media.giphy.com/media/3mCVvB3zFd4J8lpmBb/giphy.gif)
 
 ## Technologies (Front and Back end)
 - React
