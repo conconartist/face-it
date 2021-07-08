@@ -9,10 +9,12 @@
     align-items: center;
     display: flex;
     margin: 1em;
+    width: 90vw;
 }
 
 .categoryDescription {
     margin: 1em;
+    width: 90vw;
 }
 .categoryTitle {
     display: flex;
