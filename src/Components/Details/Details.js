@@ -5,13 +5,13 @@ import Error from '../Error/Error';
 import { Redirect } from "react-router-dom";
 import LoadingMessage from '../Loading/Loading';
 
-const Details = ({ makeup, id }) => {
+const Details = ({ data, id }) => {
   const [singleProduct, setSingleProduct] = useState(null);
   const [incorrectId, setIncorrectId] = useState(false);
 
   const findProduct = () => {
-    if( makeup.length ) {
-      const singleMakeup = makeup.find((item) => item.id === parseInt(id))
+    if( data.length ) {
+      const singleMakeup = data.find((item) => item.id === parseInt(id))
       if (singleMakeup) {
         setSingleProduct(singleMakeup)
       } else {

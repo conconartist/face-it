@@ -289,7 +289,7 @@ class App extends Component {
             path='/:category/:type/:id'
             render={({ match }) => {
               return (
-                <Details makeup={this.state.makeup} id={match.params.id} />
+                <Details data={this.state.makeup} id={match.params.id} />
               );
             }}
           />
