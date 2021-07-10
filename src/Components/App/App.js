@@ -16,6 +16,7 @@ import Items from '../Items/Items';
 import SearchResults from '../SearchResults/SearchResults';
 import Details from '../Details/Details';
 import apiCalls from '../../apiCalls';
+import productsData from '../../productsData';
 
 class App extends Component {
   constructor(){
@@ -31,6 +32,7 @@ class App extends Component {
       isFetching: true,
       isSearching: false,
       error: false,
+      fetchError: false
     }
   }
 
@@ -49,10 +51,20 @@ class App extends Component {
         this.setState({isFetching: false});
       })
       .catch((err) => {
-        this.setState({error: true, isFetching: false})
+        console.log(err)
+        this.setState({fetchError: true, isFetching: false})
+        this.displayBackup()
       });
   }
  
+  displayBackup = () => {
+    console.log('Using backup data:')
+    this.setState({
+      makeup: productsData,
+    })
+    this.sortByCategory(this.state.makeup);
+    this.setState({isFetching: false});
+  }
   searchMakeup = userInput => {
       if(userInput !== ''){
     const filterWithBrand = this.state.makeup.filter(item => item.brand)
@@ -277,7 +289,7 @@ class App extends Component {
             path='/:category/:type/:id'
             render={({ match }) => {
               return (
-                <Details id={match.params.id} />
+                <Details makeup={this.state.makeup} id={match.params.id} />
               );
             }}
           />
