@@ -4,29 +4,26 @@ import './Details.css';
 import Error from '../Error/Error';
 import { Redirect } from "react-router-dom";
 import LoadingMessage from '../Loading/Loading';
-import apiCalls from '../../apiCalls';
 
-const Details = ({ id }) => {
+const Details = ({ data, id }) => {
   const [singleProduct, setSingleProduct] = useState(null);
   const [incorrectId, setIncorrectId] = useState(false);
 
-  useEffect(() => {
-    const detailsAPI = () => {
-      return apiCalls.getApiData()
-      .then((data) => {
-        if( data.length ) {
-          const singleMakeup = data.find((item) => item.id === parseInt(id))
-          if (singleMakeup) {
-            setSingleProduct(singleMakeup)
-          } else {
-            setIncorrectId(true)
-          }
-        }
-      })
-
+  const findProduct = () => {
+    if( data.length ) {
+      const singleMakeup = data.find((item) => item.id === parseInt(id))
+      if (singleMakeup) {
+        setSingleProduct(singleMakeup)
+      } else {
+        setIncorrectId(true)
+      }
+      return singleMakeup;
     }
-    detailsAPI();
-  }, [id]);
+  }
+
+  useEffect(() => {
+    findProduct();
+  })
 
 return (
   <div className="productDetailsContainer">
@@ -40,7 +37,7 @@ return (
       img={singleProduct["image_link"]}
       description={singleProduct.description}
       productType={singleProduct["product_type"]}
-      website={singleProduct["website_link"]}
+      website={singleProduct["product_link"]}
       />
     }
   </div>
