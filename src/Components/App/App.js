@@ -18,6 +18,7 @@ import Details from '../Details/Details';
 import apiCalls from '../../apiCalls';
 import productsData from '../../productsData';
 
+
 class App extends Component {
   constructor(){
     super();

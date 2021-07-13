@@ -19,9 +19,24 @@ nav ul li:first-child {
     margin-right: auto;
 }
 
+.navLogo {
+    fill: white;
+    width: 1.2em;
+    padding-top: 10px;
+}
+
+.navLogo:active {
+    background-color: #A63D10;
+}
+
+.navLogo:hover {
+    background-color: #F4E9E1;
+    fill: #1F0800;
+}
+
 .navText {
     font-weight: bold;
-    font-size: 0.75rem;
+    font-size: 1rem;
 }
 
 nav a {
@@ -29,7 +44,7 @@ nav a {
     font-weight: bold;
     font-size: 1.2rem;
     text-align: right;
-    padding: 0.4em;
+    padding: 0;
 }
 
 nav a:active {
@@ -43,15 +58,39 @@ nav a:hover {
 
 .categoryNavList {
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     width: 90vw;
 }
 .categoryNavList a {
-    margin-left: 1rem;
+    margin-left: 0.75rem;
 }
 
 @media screen and (min-width: 800px) {
     .navText {
         font-size: 1rem;
     }
-  }
+}
+
+@media screen and (min-width: 500px) {
+    .categoryNavList {
+        flex-direction: row;
+    }
+    .navLogo {
+        width: 2em;
+    }
+    nav a {
+        padding: 0.4em;
+    }
+}
+
+@media screen and (min-width: 500px) {
+
+    nav a {
+        padding: 0.4em;
+    }
+
+    .navLogo {
+        padding-top: 5px;
+    }
+}

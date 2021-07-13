@@ -2,12 +2,13 @@ import React from 'react';
 import './Nav.css';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import HomeButton from '../HomeButton/HomeButton';
 
 const Nav = ({handleClick}) => {
   return (
     <nav>
         <Link to='/'>
-          <p className='navText' onClick={() => handleClick()}>Home</p>
+          <article className='navLogo' onClick={() => handleClick()}><HomeButton /></article>
         </Link>
       <div className='categoryNavList'>
         <Link to='/crueltyFree'>
